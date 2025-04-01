@@ -253,7 +253,3 @@ DEST   DB 10 DUP(0)
 
 - Manuale di riferimento EMU8086
 - Intel 8086/8088 Instruction Set
-- Documentazione A.s. 2024-25 Programmazione Disciplinare Sistemi e Reti
-```
-
-Per esercitazioni pratiche, consulta la documentazione di EMU8086 e prova a implementare piccoli programmi che utilizzano i concetti descritti in questi appunti.

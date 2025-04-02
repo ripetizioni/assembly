@@ -2,6 +2,7 @@
 
 ## Indice
 1. [Introduzione al Linguaggio Assembly](#1-introduzione-al-linguaggio-assembly)
+   1.1 [I Registri del Processore](#11-i-registri-del-processore)
 2. [Metodi di Indirizzamento](#2-metodi-di-indirizzamento)
 3. [Ambiente di Simulazione EMU8086](#3-ambiente-di-simulazione-emu8086)
 4. [Strutture di Controllo](#4-strutture-di-controllo)
@@ -19,6 +20,43 @@ Il linguaggio Assembly è un linguaggio di programmazione di basso livello che r
 - **Controllo preciso dell'hardware**: permette di controllare direttamente i registri e la memoria
 - **Efficienza**: programmi ben scritti in Assembly possono essere estremamente efficienti
 - **Complessità**: richiede conoscenza dettagliata dell'hardware
+
+### 1.1 I Registri del Processore
+
+I registri sono unità di memoria ad accesso veloce interne al processore. Nell'architettura x86, ogni registro ha funzioni specifiche:
+
+#### Registri General-Purpose (16 bit)
+- **AX (Accumulatore)**: Operazioni aritmetiche, I/O, moltiplicazioni/divisioni
+  - **AH, AL**: Parti alta e bassa di AX (8 bit ciascuna)
+- **BX (Base)**: Indirizzamento in memoria, calcolo indirizzi
+  - **BH, BL**: Parti alta e bassa di BX
+- **CX (Contatore)**: Conteggio cicli, operazioni su stringhe
+  - **CH, CL**: Parti alta e bassa di CX
+- **DX (Data)**: I/O, operazioni aritmetiche estese, parte alta in divisioni/moltiplicazioni
+  - **DH, DL**: Parti alta e bassa di DX
+
+#### Registri Indice e Puntatori
+- **SI (Source Index)**: Puntatore sorgente per operazioni su stringhe
+- **DI (Destination Index)**: Puntatore destinazione per operazioni su stringhe
+- **SP (Stack Pointer)**: Puntatore al top dello stack
+- **BP (Base Pointer)**: Referenziazione parametri e variabili locali nello stack
+
+#### Registri Segmento
+- **CS (Code Segment)**: Segmento di codice corrente
+- **DS (Data Segment)**: Segmento dati predefinito
+- **SS (Stack Segment)**: Segmento dello stack
+- **ES (Extra Segment)**: Segmento extra per operazioni su stringhe
+
+#### Registro Istruzioni
+- **IP (Instruction Pointer)**: Puntatore alla prossima istruzione da eseguire
+
+#### Registro Flag
+Contiene i bit di stato che riflettono il risultato delle operazioni:
+- **CF (Carry Flag)**: Riporto in operazioni aritmetiche
+- **ZF (Zero Flag)**: Risultato operazione uguale a zero
+- **SF (Sign Flag)**: Risultato operazione negativo
+- **OF (Overflow Flag)**: Overflow in operazioni aritmetiche
+- **DF (Direction Flag)**: Direzione per operazioni su stringhe (0=incremento, 1=decremento)
 
 ## 2. Metodi di Indirizzamento
 

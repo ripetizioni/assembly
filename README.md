@@ -4,7 +4,7 @@
 
 ## Indice
 1. [Introduzione al Linguaggio Assembly](#1-introduzione-al-linguaggio-assembly)
-   1.1 [I Registri del Processore](#11-i-registri-del-processore)
+   1.1. [I Registri del Processore](#11-i-registri-del-processore)
 2. [Metodi di Indirizzamento](#2-metodi-di-indirizzamento)
 3. [Ambiente di Simulazione EMU8086](#3-ambiente-di-simulazione-emu8086)
 4. [Strutture di Controllo](#4-strutture-di-controllo)

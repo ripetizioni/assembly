@@ -35,6 +35,26 @@ I registri sono unità di memoria ad accesso veloce interne al processore. Nell'
 - **DX (Data)**: I/O, operazioni aritmetiche estese, parte alta in divisioni/moltiplicazioni
   - **DH, DL**: Parti alta e bassa di DX
 
+##### Parti alta e bassa dei registri
+Ciascun registro general-purpose da 16 bit può essere utilizzato come un unico registro a 16 bit (es. AX) o come due registri separati da 8 bit ciascuno:
+- **Parte alta (H)**: gli 8 bit più significativi (es. AH = bits 15-8 di AX)
+- **Parte bassa (L)**: gli 8 bit meno significativi (es. AL = bits 7-0 di AX)
+
+Questa suddivisione permette:
+- Operazioni più efficienti su dati a 8 bit
+- Accesso separato a byte singoli senza dover estrarre/mascherare manualmente i bit
+- Retrocompatibilità con processori 8-bit precedenti
+
+Esempio di manipolazione delle parti:
+```assembly
+MOV AL, 12h     ; Modifica solo la parte bassa di AX
+MOV AH, 34h     ; Modifica solo la parte alta di AX
+                ; Ora AX contiene 3412h
+
+MOV CL, 5       ; Modifica solo la parte bassa di CX
+SHL CH, 1       ; Operazione solo sulla parte alta di CX
+```
+
 #### Registri Indice e Puntatori
 - **SI (Source Index)**: Puntatore sorgente per operazioni su stringhe
 - **DI (Destination Index)**: Puntatore destinazione per operazioni su stringhe

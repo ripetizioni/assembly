@@ -1,5 +1,7 @@
 # Appunti di Assembly - Corso di Sistemi e Reti
 
+[Debugger Enhancements for 8086/8088 (PCjs)](https://www.pcjs.org/software/pcx86/util/other/enhdebug/1.32b/)
+
 ## Indice
 1. [Introduzione al Linguaggio Assembly](#1-introduzione-al-linguaggio-assembly)
    1.1 [I Registri del Processore](#11-i-registri-del-processore)
